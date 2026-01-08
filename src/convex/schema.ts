@@ -34,6 +34,16 @@ const schema = defineSchema(
 
     // add other tables here
 
+    // Company branding settings table
+    companyBranding: defineTable({
+      primaryColor: v.string(), // primary brand color (hex)
+      secondaryColor: v.string(), // secondary brand color (hex)
+      textTheme: v.union(v.literal("light"), v.literal("dark")), // text theme
+      logoUrl: v.optional(v.string()), // company logo storage ID
+      faviconUrl: v.optional(v.string()), // favicon storage ID
+      companyName: v.optional(v.string()), // company name
+    }),
+
     // tableName: defineTable({
     //   ...
     //   // table fields
